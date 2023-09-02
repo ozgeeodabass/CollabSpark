@@ -4,9 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
+@Table(name = "contributions")
 @Data
-@Table(name = "comments")
-public class Comment {
+public class Contribution {
 
     @Id
     private int id;
@@ -18,5 +18,4 @@ public class Comment {
     @Column(name = "text",  columnDefinition = "text")
     @Lob
     private String text;
-
 }
