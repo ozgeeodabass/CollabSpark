@@ -1,10 +1,9 @@
 package project.CollabSpark.Entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Table(name = "roles")
@@ -16,5 +15,8 @@ public class Roles {
 
     @Column(name = "role_name")
     private String roleName;
+
+    @OneToMany(mappedBy = "role")
+    private List<User> employees;
 
 }
