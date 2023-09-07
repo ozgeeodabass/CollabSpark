@@ -26,4 +26,14 @@ public class PostManager implements PostService {
         }
         return this.postRepository.findAll();
     }
+
+    @Override
+    public Post getPost(Integer postId) {
+        return this.postRepository.findById(postId).orElse(null);
+    }
+
+    @Override
+    public Post createOnePost(Post newPost) {
+        return this.postRepository.save(newPost);
+    }
 }

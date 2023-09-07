@@ -11,9 +11,13 @@ public class Contribution {
     @Id
     private int id;
 
-    private Post postId;
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+   private Post post;
 
-    private User userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @Column(name = "text",  columnDefinition = "text")
     @Lob

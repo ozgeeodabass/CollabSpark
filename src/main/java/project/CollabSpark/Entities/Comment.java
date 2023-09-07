@@ -14,7 +14,6 @@ public class Comment {
     @Id
     private int id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @OnDelete(action = OnDeleteAction.CASCADE)
